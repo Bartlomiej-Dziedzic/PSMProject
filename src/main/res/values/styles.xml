@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomFontTheme" parent="Theme.AppCompat.Light">
+        <item name="android:fontFamily">@font/genshinfont</item>
+        <item name="android:background">@color/gray</item>
+    </style>
+</resources>

@@ -52,7 +52,7 @@ public class CharacterSelectionActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://genshin-db-api.vercel.app/api/v5/") // Twoje API
+                .baseUrl("https://genshin-db-api.vercel.app/api/v5/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

@@ -17,4 +17,23 @@ public interface APIHandler {
 
     @GET("constellations")
     Call<APIResponses.ConstellationResponse> getConstellations(@Query("query") String characterName);
+
+    @GET("weapons")
+    Call<List<String>> getWeaponNames(
+            @Query("query") String query,
+            @Query("matchCategories") boolean matchCategories
+    );
+
+    @GET("weapons")
+    Call<APIResponses.WeaponResponse> getWeaponInfo(@Query("query") String name);
+
+    @GET("artifacts")
+    Call<List<String>> getArtifactNames(
+            @Query("query") String query,
+            @Query("matchCategories") boolean matchCategories
+    );
+
+    @GET("artifacts")
+    Call<APIResponses.ArtifactResponse> getArtifactInfo(@Query("query") String name);
+
 }

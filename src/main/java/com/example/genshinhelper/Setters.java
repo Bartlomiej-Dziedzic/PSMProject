@@ -4,15 +4,15 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
 public class Setters {
-    private ImageView rarityImageView;
-    private ImageView weaponTypeImageView;
-    private ImageView elementImageView;
+
     public static void setRarityImage(ImageView rarityImageView, String rarity) {
         switch (rarity) {
             case "4":
@@ -21,6 +21,34 @@ public class Setters {
             case "5":
                 rarityImageView.setImageResource(R.drawable.icon_5_star);
                 break;
+        }
+    }
+
+    public static void setArtifactRarityImages(LinearLayout container, Integer[] rarityList) {
+        container.removeAllViews();
+
+        for (int rarity : rarityList) {
+            int starResId = getStarDrawable(rarity);
+            ImageView star = new ImageView(container.getContext());
+            star.setImageResource(starResId);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+            );
+            params.setMargins(8, 0, 8, 0);
+            star.setLayoutParams(params);
+            container.addView(star);
+        }
+    }
+
+    private static int getStarDrawable(int rarity) {
+        switch (rarity) {
+            case 1: return R.drawable.icon_1_star;
+            case 2: return R.drawable.icon_2_star;
+            case 3: return R.drawable.icon_3_star;
+            case 4: return R.drawable.icon_4_star;
+            case 5: return R.drawable.icon_5_star;
+            default: return 0;
         }
     }
 
@@ -81,7 +109,6 @@ public class Setters {
                 elementImageView.setImageResource(R.drawable.icon_element_unaligned);
         }
     }
-
     public static void setLink(TextView linkTextView, String characterName) {
         StringBuilder formattedName = new StringBuilder();
 

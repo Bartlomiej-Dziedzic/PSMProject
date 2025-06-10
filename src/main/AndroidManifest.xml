@@ -15,6 +15,18 @@
         android:theme="@style/Theme.GenshinHelper"
         tools:targetApi="31">
         <activity
+            android:name=".informations.ArtifactInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".selections.ArtifactSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".selections.WeaponSelectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".informations.WeaponInformationActivity"
+            android:exported="false" />
+        <activity
             android:name=".informations.CharacterInformationActivity"
             android:exported="false" />
         <activity

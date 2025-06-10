@@ -29,7 +29,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
 
     @Override
     public CharacterViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_character, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
         return new CharacterViewHolder(view);
     }
 
@@ -69,7 +69,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
 
         public CharacterViewHolder(View itemView) {
             super(itemView);
-            characterNameTextView = itemView.findViewById(R.id.character_name);
+            characterNameTextView = itemView.findViewById(R.id.name);
         }
     }
 

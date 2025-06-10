@@ -11,19 +11,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/gray">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="370dp"
             android:layout_height="60dp"
+            android:text="Select weapon"
+            android:textColor="@color/white"
+            android:textSize="36dp"
             android:gravity="center_horizontal"
             android:justificationMode="inter_word"
             android:lineSpacingExtra="4dp"
             android:padding="8dp"
-            android:text="Select character"
-            android:textColor="@color/white"
-            android:textSize="36dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,9 +51,9 @@
             app:layout_constraintWidth_percent="0.9" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/character_list"
-            android:layout_width="0dp"
-            android:layout_height="450dp"
+            android:id="@+id/weapon_list"
+            android:layout_width="match_parent"
+            android:layout_height="382dp"
             android:layout_marginTop="20dp"
             android:background="@android:color/darker_gray"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -63,78 +64,69 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="410dp"
-            android:layout_height="40dp"
+            android:id="@+id/linearLayout"
+            android:layout_width="409dp"
+            android:layout_height="110dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.286">
+            app:layout_constraintVertical_bias="0.289">
 
             <ImageView
-                android:id="@+id/pyro"
+                android:id="@+id/imageViewSword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/icon_element_pyro" />
+                app:srcCompat="@drawable/icon_weapon_sword" />
 
             <ImageView
-                android:id="@+id/hydro"
+                android:id="@+id/imageViewClaymore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/icon_element_hydro" />
+                app:srcCompat="@drawable/icon_weapon_claymore" />
 
             <ImageView
-                android:id="@+id/electro"
+                android:id="@+id/imageViewPolearm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/icon_element_electro" />
+                app:srcCompat="@drawable/icon_weapon_polearm" />
 
             <ImageView
-                android:id="@+id/cryo"
+                android:id="@+id/imageViewCatalyst"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/icon_element_cryo" />
+                app:srcCompat="@drawable/icon_weapon_catalyst" />
+
+            <ImageView
+                android:id="@+id/imageViewBow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/icon_weapon_bow" />
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="409dp"
-            android:layout_height="42dp"
-            android:orientation="horizontal"
+        <Spinner
+            android:id="@+id/rarity_spinner"
+            android:layout_width="410dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:spinnerMode="dropdown"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.345">
+            app:layout_constraintVertical_bias="0.429" >
 
-            <ImageView
-                android:id="@+id/anemo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon_element_anemo" />
-
-            <ImageView
-                android:id="@+id/dendro"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon_element_dendro" />
-
-            <ImageView
-                android:id="@+id/geo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon_element_geo" />
-        </LinearLayout>
+        </Spinner>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

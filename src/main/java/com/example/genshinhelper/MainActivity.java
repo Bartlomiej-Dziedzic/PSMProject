@@ -7,7 +7,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.genshinhelper.selections.ArtifactSelectionActivity;
 import com.example.genshinhelper.selections.CharacterSelectionActivity;
+import com.example.genshinhelper.selections.WeaponSelectionActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,16 +24,11 @@ public class MainActivity extends AppCompatActivity {
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
 
-        View.OnClickListener goToCharacterSelection = v -> {
-            Intent intent = new Intent(MainActivity.this, CharacterSelectionActivity.class);
-            startActivity(intent);
-        };
-
-        button1.setOnClickListener(v -> openCharacterSelection(1));
-        button2.setOnClickListener(v -> openCharacterSelection(2));
-        button3.setOnClickListener(v -> openCharacterSelection(3));
+        button1.setOnClickListener(v -> openSelectedActivity(1));
+        button2.setOnClickListener(v -> openSelectedActivity(2));
+        button3.setOnClickListener(v -> openSelectedActivity(3));
     }
-    private void openCharacterSelection(int slot) {
+    private void openSelectedActivity(int slot) {
         Intent intent;
         switch(slot)
         {
@@ -40,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case 2:
-                intent = new Intent(MainActivity.this, CharacterSelectionActivity.class);
+                intent = new Intent(MainActivity.this, WeaponSelectionActivity.class);
                 startActivity(intent);
                 break;
             case 3:
-                intent = new Intent(MainActivity.this, CharacterSelectionActivity.class);
+                intent = new Intent(MainActivity.this, ArtifactSelectionActivity.class);
                 startActivity(intent);
                 break;
         }

@@ -43,6 +43,7 @@ public class CharacterInformationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_information);
 
+        int placeholderRes = R.drawable.icon_character;
         nameTextView = findViewById(R.id.name);
         descriptionTextView = findViewById(R.id.description);
         voiceActorTextView = findViewById(R.id.voice_actor);
@@ -77,6 +78,7 @@ public class CharacterInformationActivity extends AppCompatActivity {
 
                     Glide.with(CharacterInformationActivity.this)
                             .load(character.getImageUrl())
+                            .error(placeholderRes)
                             .into(characterImageView);
 
                     Setters.setRarityImage(rarityImageView,character.rarity);

@@ -40,6 +40,7 @@ public class WeaponInformationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weapon_information);
+        int placeholderRes = R.drawable.icon_weapon_sword;
 
         nameTextView = findViewById(R.id.name);
         descriptionTextView = findViewById(R.id.description);
@@ -73,6 +74,7 @@ public class WeaponInformationActivity extends AppCompatActivity {
                     mainStatTextView.setText(weapon.mainStatText);
                     Glide.with(WeaponInformationActivity.this)
                             .load(weapon.getImageUrl())
+                            .error(placeholderRes)
                             .into(weaponImageView);
 
                     Setters.setRarityImage(rarityImageView, weapon.rarity);

@@ -106,8 +106,28 @@ public class ArtifactInformationActivity extends AppCompatActivity {
     }
 
     private void loadImageAndSetClick(ImageView imageView, String url, String type) {
+        int placeholderRes = 0;
+        switch (type) {
+            case "flower":
+                placeholderRes = R.drawable.icon_flower;
+                break;
+            case "plume":
+                placeholderRes = R.drawable.icon_plume;
+                break;
+            case "sands":
+                placeholderRes = R.drawable.icon_sands;
+                break;
+            case "goblet":
+                placeholderRes = R.drawable.icon_goblet;
+                break;
+            case "circlet":
+                placeholderRes = R.drawable.icon_circlet;
+                break;
+
+        }
         Glide.with(this)
                 .load(url)
+                .error(placeholderRes)
                 .into(imageView);
         imageView.setBackground(null);
         imageView.setOnClickListener(v -> {
